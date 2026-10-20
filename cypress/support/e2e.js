@@ -1,2 +1,2 @@
 // Arquivo de suporte global dos testes E2E do Cypress.
-// Pode ser usado futuramente para importar comandos personalizados ou configurações globais.
+// As ações de cada tela ficam organizadas em cypress/pages (Page Objects).
