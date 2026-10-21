@@ -25,3 +25,14 @@ jobs:
 
       - name: Executar testes E2E
         run: npm run cy:run
+
+      - name: Salvar relatório HTML e screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-relatorio-e-screenshots-${{ github.run_number }}
+          path: |
+            cypress/reports/index.html
+            cypress/screenshots/**
+          if-no-files-found: ignore
+          retention-days: 7
