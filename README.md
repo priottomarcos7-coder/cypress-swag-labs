@@ -1,5 +1,7 @@
 # Automação E2E com Cypress — Swag Labs
 
+[![Cypress E2E Tests](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions/workflows/cypress.yml/badge.svg?branch=main)](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions/workflows/cypress.yml)
+
 Projeto de portfólio para praticar testes end-to-end (E2E) em uma loja virtual de demonstração: [Swag Labs](https://www.saucedemo.com/).
 
 ## Objetivo
