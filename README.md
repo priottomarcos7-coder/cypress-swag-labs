@@ -106,7 +106,7 @@ Se um teste falhar durante uma execução headless, o Cypress captura automatica
 cypress/screenshots/
 ```
 
-Essas pastas são geradas durante a execução e não precisam ser adicionadas ao Git. No GitHub Actions, o relatório HTML e as screenshots disponíveis são publicados como um artefato chamado **cypress-relatorio-e-screenshots**. Para acessá-los, abra a aba [Actions](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions), selecione uma execução concluída e baixe a seção **Artifacts**. Os artefatos ficam disponíveis por 7 dias.
+Essas pastas são geradas durante a execução e não precisam ser adicionadas ao Git. No GitHub Actions, o relatório HTML e as screenshots disponíveis são publicados como um artefato cujo nome começa com **cypress-relatorio-e-screenshots-**, seguido do número da execução. Para acessá-los, abra a aba [Actions](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions), selecione uma execução concluída e baixe a seção **Artifacts**. Os artefatos ficam disponíveis por 7 dias.
 
 ## Integração contínua (GitHub Actions)
 
