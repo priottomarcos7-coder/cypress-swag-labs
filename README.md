@@ -90,13 +90,29 @@ Se o Google Chrome estiver instalado, também é possível executar:
 npm run cy:chrome
 ```
 
-Ao terminar, o Cypress mostra no terminal a quantidade de testes aprovados e reprovados e encerra o processo. Se algum teste falhar, confira a mensagem de erro exibida no terminal.
+Ao terminar, o Cypress mostra no terminal a quantidade de testes aprovados e reprovados e encerra o processo.
+
+## Relatórios e evidências
+
+Ao executar os testes em modo headless com `npm run cy:run`, o projeto gera um relatório HTML com o resumo da execução e o status de cada cenário:
+
+```text
+cypress/reports/index.html
+```
+
+Se um teste falhar durante uma execução headless, o Cypress captura automaticamente uma screenshot. As imagens são salvas em:
+
+```text
+cypress/screenshots/
+```
+
+Essas pastas são geradas durante a execução e não precisam ser adicionadas ao Git. No GitHub Actions, o relatório HTML e as screenshots disponíveis são publicados como um artefato chamado **cypress-relatorio-e-screenshots**. Para acessá-los, abra a aba [Actions](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions), selecione uma execução concluída e baixe a seção **Artifacts**. Os artefatos ficam disponíveis por 7 dias.
 
 ## Integração contínua (GitHub Actions)
 
 O workflow `.github/workflows/cypress.yml` executa os testes automaticamente quando há um push ou pull request para as branches `main` ou `master`. Também pode ser iniciado manualmente na aba **Actions** do GitHub, selecionando **Cypress E2E Tests** e clicando em **Run workflow**.
 
-O workflow instala as dependências com `npm ci` e executa `npm run cy:run`. Consulte a aba [Actions do repositório](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions) para ver o resultado real de cada execução.
+O workflow instala as dependências com `npm ci`, executa `npm run cy:run` e tenta publicar o relatório e as screenshots mesmo quando os testes falham. Consulte a aba [Actions do repositório](https://github.com/priottomarcos7-coder/cypress-swag-labs/actions) para ver o resultado real de cada execução.
 
 ## Usuários de demonstração
 
@@ -136,6 +152,7 @@ cypress-swag-labs/
 
 - Os testes dependem da disponibilidade do site público de demonstração.
 - Os dados preenchidos no checkout são fictícios e utilizados apenas para teste.
+- O relatório HTML é gerado nas execuções em modo headless; as screenshots são capturadas automaticamente quando um teste falha nesse modo.
 - O workflow automatiza a execução no GitHub, mas o resultado de cada execução deve ser conferido na aba **Actions**.
 
 ## Autoria
